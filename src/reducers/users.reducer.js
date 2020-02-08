@@ -1,12 +1,26 @@
-import {FaqActions} from "../models/Faq.model";
+import {UserActions} from "../models/Faq.model";
 
-const faqReducer = (state = [], action) => {
+const usersReducer = (state = [], action) => {
     switch (action.type) {
-        case FaqActions.FETCH:
-            return action.payload;
+        case UserActions.FETCH:
+            return {
+                list: action.payload,
+                waiting: false,
+                error: null
+            };
+        case UserActions.WAITING:
+            return {
+                waiting: true,
+                error: null
+            };
+        case UserActions.FAIL:
+            return {
+                waiting: false,
+                error: action.payload
+            };
         default:
             return state;
     }
 };
 
-export default faqReducer;
+export default usersReducer;

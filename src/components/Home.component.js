@@ -7,11 +7,7 @@ import {fetchUsers} from "../actions";
 import Button from "react-bootstrap/Button";
 
 
-class Home extends Component {
-
-    componentDidMount() {
-        this.props.fetchUsers();
-    }
+class HomeComponent extends Component {
 
     render() {
         const { title, increment, decrement, logIn, status, count } = this.props;
@@ -30,7 +26,7 @@ class Home extends Component {
     }
 };
 
-Home.propTypes= {
+HomeComponent.propTypes= {
     title: PropTypes.string.isRequired
 };
 
@@ -40,4 +36,4 @@ const mapStateToProps = ({ loginStatus, count, users }) => ({
    users
 });
 
-export default connect(mapStateToProps, { fetchUsers, increment, decrement, logIn })(Home);
+export default connect(mapStateToProps, { fetchUsers, increment, decrement, logIn })(HomeComponent);
