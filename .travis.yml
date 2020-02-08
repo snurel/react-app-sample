@@ -6,15 +6,15 @@ services:
 #     - docker build -t test-run -f Dockerfile.dev .
 # script:
 #     - docker run test-run npm run test -- --coverage
-deploy: 
-    edge: true
-    provider: elasticbeanstalk
-    region: "eu-west-1"
-    app: "react-sample-app"
-    env: "ReactSampleApp-env"
-    bucket_name: "elasticbeanstalk-eu-west-1-385681792060"
-    bucket_path: "react-sample-app"
-    on:
-        branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+# deploy: 
+#     edge: true
+#     provider: elasticbeanstalk
+#     region: "eu-west-1"
+#     app: "react-sample-app"
+#     env: "ReactSampleApp-env"
+#     bucket_name: "elasticbeanstalk-eu-west-1-385681792060"
+#     bucket_path: "react-sample-app"
+#     on:
+#         branch: master
+#     access_key_id: $AWS_ACCESS_KEY
+#     secret_access_key: $AWS_SECRET_KEY
