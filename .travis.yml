@@ -1,7 +1,8 @@
+language: generic
 sudo: required
 services: 
     - docker
 before_install:
-    - docker build -t 1154455/react-sample-app -f Dockerfile.dev .
+    - docker build -t test-run -f Dockerfile.dev .
 script:
-    - docker run 1154455/react-sample-app npm run test -- --coverage
+    - docker run test-run npm run test -- --coverage
