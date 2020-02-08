@@ -2,10 +2,10 @@ language: generic
 sudo: required
 services: 
     - docker
-before_install:
-    - docker build -t test-run -f Dockerfile.dev .
-script:
-    - docker run test-run npm run test -- --coverage
+# before_install:
+#     - docker build -t test-run -f Dockerfile.dev .
+# script:
+#     - docker run test-run npm run test -- --coverage
 deploy: 
     edge: true
     provider: elasticbeanstalk
