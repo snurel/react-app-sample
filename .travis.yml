@@ -5,7 +5,7 @@ services:
 before_install:
     - docker build -t test-run -f Dockerfile.dev .
 script:
-    - docker run test-run npm run test -- --coverage
+    - docker run -e CI=true test-run npm run test
 # deploy: 
 #     edge: true
 #     provider: elasticbeanstalk
